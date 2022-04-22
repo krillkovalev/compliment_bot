@@ -9,7 +9,7 @@ from tgbot.config import load_config
 from tgbot.filters.role import RoleFilter, AdminFilter
 from tgbot.handlers.admin import register_admin
 from tgbot.handlers.user import register_user
-from tgbot.middlewares.db import DbMiddleware
+# from tgbot.middlewares.db import DbMiddleware
 from tgbot.middlewares.role import RoleMiddleware
 from tgbot.utils.misc.set_bot_commands import set_default_commands
 
