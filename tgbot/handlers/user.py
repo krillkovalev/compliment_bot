@@ -1,10 +1,12 @@
 from aiogram import Dispatcher
-from aiogram.types import Message
+# from aiogram.types import Message
 
 from tgbot.handlers.generate import cmd_gnr
 from tgbot.handlers.help import cmd_help
 from tgbot.handlers.start import cmd_start
-from tgbot.services.repository import Repo
+
+
+# from tgbot.services.repository import Repo
 
 
 # async def user_start(m: Message, repo: Repo):

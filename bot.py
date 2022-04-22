@@ -2,8 +2,8 @@ import asyncio
 import logging
 
 from aiogram import Bot, Dispatcher, types
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.contrib.fsm_storage.redis import RedisStorage
+# from aiogram.contrib.fsm_storage.memory import MemoryStorage
+# from aiogram.contrib.fsm_storage.redis import RedisStorage
 
 from tgbot.config import load_config
 from tgbot.filters.role import RoleFilter, AdminFilter
@@ -11,6 +11,7 @@ from tgbot.handlers.admin import register_admin
 from tgbot.handlers.user import register_user
 from tgbot.middlewares.db import DbMiddleware
 from tgbot.middlewares.role import RoleMiddleware
+from tgbot.utils.misc.set_bot_commands import set_default_commands
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +49,8 @@ async def main():
 
     register_admin(dp)
     register_user(dp)
+    await set_default_commands(dp)
+
 
     # start
     try:
