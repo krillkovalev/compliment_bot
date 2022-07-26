@@ -1,6 +1,9 @@
+import aiogram.types
 from aiogram import types
-from pars import compliment
+import requests
 
 
 async def cmd_gnr(m: types.Message):
-    await m.answer(compliment())
+    compliment = requests.get('https://complimentr.com/api')
+    compliment = compliment.json()
+    await m.answer(f"{m.from_user.username}, {compliment['compliment']}")
